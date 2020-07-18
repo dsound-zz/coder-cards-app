@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+
+
+body {
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background: black;
+  padding: 30px; 
+  border: double lavender 2px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header h1 {
+  color: cornflowerblue;
+  font-style: times; 
+  padding-bottom: 2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header h4 {
+  place-items: right;
+  color: green;
+  font-size: 20px; 
+  font-family: Courier New, Courier, monospace;
+}
+
+.header p {
+  color: cornflowerblue;
+  font-style: times;
+}
+
+.container {
+  width: 300px; 
+  height: 180px; 
+  margin: auto; 
+  perspective: 800px;
+  display: inline-flex;
+} 
+
+.scene {
+  width: 200px;
+  height: 260px;
+  border: 1px solid #CCC;
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
   color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.card__face--front {
+  background: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card__face--back {
+  background: blue;
+  transform: rotateY(180deg);
 }
+
+
+#card-front {
+  
+  place-items: center;
+  display: grid;
+  align-items: center;
+  background: black;
+  color: white; 
+  width: 280px; 
+  height: 130px;
+  border: solid #ffe6d7e1 2px;
+}
+
+#card-back {
+        place-items: center;
+        display: grid;
+        align-items: center;
+        background: white;
+        color: black;
+        width: 280px; 
+        height: 130px;
+        border: solid #ffe6d7e1 2px;
+        overflow-y: scroll;
+}
+
+#deck {
+  padding: 5px;
+ border: solid lightgrey 3px;
+  background-color: lightBlue;
+  border-color: beige;
+  text-align: center; 
+}
+
+#deck h4 {
+  font-size: 20px; 
+  font-style: verdana sans-serif; 
+  text-align: center; 
+}
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,10 +7,16 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
+    "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-flipcard-2": "^0.3.2",
+    "react-scripts": "3.4.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "webpack-dev-server": "3.11.0"
   },
   "scripts": {
+    "start:dev": "webpack-dev-server",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -30,5 +36,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "jsx-loader": "^0.13.2",
+    "webpack-cli": "^3.3.12"
   }
 }
