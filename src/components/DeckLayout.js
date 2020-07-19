@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, Modal, Form, Confirm } from 'semantic-ui-react';
+import { Card, Icon, Modal, Form, Confirm, Grid } from 'semantic-ui-react';
 import FlipCard from 'react-flipcard-2'
 
 // render cards here 
@@ -66,57 +66,52 @@ class DeckLayout extends Component {
   };
 
   handleDeleteCard = () => {
-
   };
 
   render() {
     const { isFlipped } = this.state;
     return (
       <>
-    
-          {this.props.currentUser && this.props.currentUser.id !== 1 ? (
-            <div>
-              <Icon
-                name="edit"
-                value="edit"
-                color="grey"
-                size="small"
-                onClick={() => this.handleOpen(this.props.card.id)}
-              />
-              <Icon
-                name="delete"
-                color="grey"
-                size="small"
-                onClick={this.show}
-              />{" "}
-            </div>
-          ) : null}
-          <Confirm
-            open={this.state.open}
-            content="Are you sure you want to delete this card?"
-            onCancel={this.handleCancel}
-            onConfirm={this.handleConfirm}
-          />
-
+        {this.props.currentUser && this.props.currentUser.id !== 1 ? (
+          <div>
+            <Icon
+              name="edit"
+              value="edit"
+              color="grey"
+              size="small"
+              onClick={() => this.handleOpen(this.props.card.id)}
+            />
+            <Icon name="delete" color="grey" size="small" onClick={this.show} />{" "}
+          </div>
+        ) : null}
+        <Confirm
+          open={this.state.open}
+          content="Are you sure you want to delete this card?"
+          onCancel={this.handleCancel}
+          onConfirm={this.handleConfirm}
+        />
+        <div className="flex-container">
+         
             <div className="scene scene--card">
-            <div className="card" onClick={() => this.handleClick()} className={isFlipped ? "card is-flipped" : "card"}>
-             
-           
-              <div className="card__face card__face--front">
-                <div>
-                  <h2>{this.props.card.front}</h2>
+              <div
+                className="card"
+                onClick={() => this.handleClick()}
+                className={isFlipped ? "card is-flipped" : "card"}
+              >
+                <div className="card__face card__face--front">
+                  <div>
+                    <h2>{this.props.card.front}</h2>
+                  </div>
+                </div>
+                <div className="card__face card__face--back">
+                  <div>
+                    <h4>{this.props.card.back}</h4>
+                  </div>
                 </div>
               </div>
-               <div className="card__face card__face--back">
-                <div>
-                  <h4>{this.props.card.back}</h4>
-                </div>
-              </div>
-             
             </div>
-            </div>
-     
         
+        </div>
 
         <Modal
           open={this.state.modalOpen}

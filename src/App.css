@@ -28,21 +28,29 @@ body {
   font-style: times;
 }
 
-.container {
+.flex-container {
+  display: inline-flex;
+  border: purple solid 2px;
+  width: 50%;
+  height: auto;
+}
+
+/* .container {
   width: 300px; 
   height: 180px; 
   margin: auto; 
   padding: 20px; 
   perspective: 800px;
   display: inline-flex;
-} 
+}  */
 
 .scene {
-  width: 200px;
+  width: 300px;
   height: 200px;
   border: 1px solid rgb(248, 248, 248);
-  margin: 40px 40px;
-  perspective: 900px;
+  margin: 60px 60px;
+  padding-right: 2em;
+  perspective: 500px;
 }
 
 .card {
@@ -52,23 +60,19 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
-  
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg);
- 
-}
+  transform: rotateX(180deg);
+ }
 
 .card__face {
   position: absolute;
-  
   width: 150%;
   height: 100%;
   line-height: 100px;
   color: white;
   text-align: center;
-  /* font-weight: bold; */
   font-size: 40px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -77,44 +81,20 @@ body {
 .card__face--front {
   background: black;
   color: white;
+  padding-top: 2em;
 }
 
 .card__face--back {
   background: white;
-  padding: 5px;
   color: black;
   overflow: scroll;
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
-
-#card-front {
-  
-  place-items: center;
-  display: grid;
-  align-items: center;
-  background: black;
-  color: white; 
-  width: 280px; 
-  height: 130px;
-  border: solid #ffe6d7e1 2px;
-}
-
-#card-back {
-        place-items: center;
-        display: grid;
-        align-items: center;
-        background: white;
-        color: black;
-        width: 280px; 
-        height: 130px;
-        border: solid #ffe6d7e1 2px;
-        overflow-y: scroll;
-}
 
 #deck {
   padding: 5px;
- border: solid lightgrey 3px;
+  border: solid lightgrey 3px;
   background-color: lightBlue;
   border-color: beige;
   text-align: center; 
