@@ -80,8 +80,7 @@ class Heading extends Component {
                     trigger={<Button color='google plus' onClick={this.handleDeckOpen}>Create Deck</Button>}
                     open={this.state.modalDeckOpen}
                     onClose={this.handleClose}
-                    basic
-                    size='small'
+                    size='medium'
                 >
 
                     <Modal.Content>
@@ -153,7 +152,6 @@ class Heading extends Component {
                 <Modal
                     open={this.state.modalSignUpOpen}
                     onClose={this.handleClose}
-                    basic
                     size='small'
                 >
 
@@ -177,7 +175,6 @@ class Heading extends Component {
                 <Modal
                     open={this.state.modalLoginOpen}
                     onClose={this.handleClose}
-                    basic
                     size='small'
                 >
                     <Modal.Content>

@@ -309,7 +309,7 @@ class App extends Component {
           </Header>
         </div>
 
-        <Grid style={{ margin: "2%" }}>
+        <Grid style={{ margin: "2%" }} divided>
           <Grid.Column width={4}>
             <DecksContainer
               decks={this.state.decks}
@@ -319,7 +319,7 @@ class App extends Component {
               currentUser={this.state.currentUser}
             />
           </Grid.Column>
-          <Grid.Column width={12}>
+          <Grid.Column width={12} className="container">
             <DeckLayoutContainer
               selectedCards={this.state.selectedCards}
               selectedDecks={this.state.selectedDecks}

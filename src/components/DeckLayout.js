@@ -73,7 +73,7 @@ class DeckLayout extends Component {
     const { isFlipped } = this.state;
     return (
       <>
-        <div className="container">
+    
           {this.props.currentUser && this.props.currentUser.id !== 1 ? (
             <div>
               <Icon
@@ -107,7 +107,7 @@ class DeckLayout extends Component {
                   <h2>{this.props.card.front}</h2>
                 </div>
               </div>
-               <div className="card_face card__face--back">
+               <div className="card__face card__face--back">
                 <div>
                   <h4>{this.props.card.back}</h4>
                 </div>
@@ -115,14 +115,13 @@ class DeckLayout extends Component {
              
             </div>
             </div>
-          </div>
+     
         
 
         <Modal
           open={this.state.modalOpen}
           onClose={this.handleClose}
-          basic
-          size="small"
+          size="medium"
         >
           <Modal.Content>
             <Form onSubmit={this.submitEditCard}>
