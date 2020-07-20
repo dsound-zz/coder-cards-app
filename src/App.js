@@ -17,7 +17,7 @@ class App extends Component {
   componentWillMount() {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(`${process.env.REACT_APP_API_URI}/current_user`, {
+      fetch(`/current_user`, {
         headers: {
           Authorization: token,
         },
