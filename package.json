@@ -18,7 +18,7 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts .env build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
