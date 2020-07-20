@@ -17,7 +17,7 @@ class App extends Component {
   componentWillMount() {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(`http://localhost:9000/v1/api/current_user`, {
+      fetch(`${process.env.REACT_APP_API_URI}/current_user`, {
         headers: {
           Authorization: token,
         },
@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:9000/v1/api/decks`)
+    fetch(`${process.env.REACT_APP_API_URI}/decks`)
       .then((r) => r.json())
       .then((fetchedDecks) => {
         if (fetchedDecks.errors) {
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   fetchDemian = () => {
-    fetch(`http://localhost:9000/v1/api/users/1`)
+    fetch(`${process.env.REACT_APP_API_URI}/users/1`)
       .then((r) => r.json())
       .then((userOne) => {
         this.setState({ currentUser: userOne });
@@ -56,7 +56,7 @@ class App extends Component {
 
   signup = (username, email, password, passwordConfirmation) => {
     if (password === passwordConfirmation) {
-      fetch(`http://localhost:9000/v1/api/users`, {
+      fetch(`${process.env.REACT_APP_API_URI}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ class App extends Component {
   };
 
   login = (username, password) => {
-    fetch(`http://localhost:9000/v1/api/login`, {
+    fetch(`${process.env.REACT_APP_API_URI}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,7 +145,7 @@ class App extends Component {
   };
 
   createDeck = (deckName = "Deck One") => {
-    fetch(`http://localhost:9000/v1/api/decks`, {
+    fetch(`${process.env.REACT_APP_API_URI}/decks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -169,7 +169,7 @@ class App extends Component {
   };
 
   createCard = (cardFront, cardBack, deckId) => {
-    fetch(`http://localhost:9000/v1/api/cards`, {
+    fetch(`${process.env.REACT_APP_API_URI}/cards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -196,7 +196,7 @@ class App extends Component {
   };
 
   deleteDeck = (deckId) => {
-    fetch(`http://localhost:9000/v1/api/decks/${deckId}`, {
+    fetch(`${process.env.REACT_APP_API_URI}/decks/${deckId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -218,7 +218,7 @@ class App extends Component {
   };
 
   editCard = (cardFront, cardBack, deckId, cardId) => {
-    fetch(`http://localhost:9000/v1/api/cards/${cardId}`, {
+    fetch(`${process.env.REACT_APP_API_URI}/cards/${cardId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -260,7 +260,7 @@ class App extends Component {
   };
 
   deleteCard = (cardId, deckId) => {
-    fetch(`http://localhost:9000/v1/api/cards/${cardId}`, {
+    fetch(`${process.env.REACT_APP_API_URI}/cards/${cardId}`, {
       method: "DELETE",
       Authorization: localStorage.getItem("token"),
     });
