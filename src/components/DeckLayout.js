@@ -114,7 +114,7 @@ class DeckLayout extends Component {
         <Modal
           open={this.state.modalOpen}
           onClose={this.handleClose}
-          size="medium"
+          size="small"
         >
           <Modal.Content>
             <Form onSubmit={this.submitEditCard}>

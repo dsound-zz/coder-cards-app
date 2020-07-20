@@ -9,7 +9,6 @@
     "react": "^16.13.1",
     "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.1",
-    "react-flipcard-2": "^0.3.2",
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
@@ -18,7 +17,7 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "start": "react-scripts start",
-    "build": "react-scripts .env build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
