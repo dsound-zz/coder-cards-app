@@ -2,6 +2,7 @@
   "name": "coder-cards-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9000/api/v1",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -17,10 +18,13 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+     "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
   },
+  
   "eslintConfig": {
     "extends": "react-app"
   },

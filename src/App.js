@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_API_URI}/decks`)
+    fetch(`/decks`)
       .then((r) => r.json())
       .then((fetchedDecks) => {
         if (fetchedDecks.errors) {
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   fetchDemian = () => {
-    fetch(`${process.env.REACT_APP_API_URI}/users/1`)
+    fetch(`/users/1`)
       .then((r) => r.json())
       .then((userOne) => {
         this.setState({ currentUser: userOne });
@@ -56,7 +56,7 @@ class App extends Component {
 
   signup = (username, email, password, passwordConfirmation) => {
     if (password === passwordConfirmation) {
-      fetch(`${process.env.REACT_APP_API_URI}/users`, {
+      fetch(`/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ class App extends Component {
   };
 
   login = (username, password) => {
-    fetch(`${process.env.REACT_APP_API_URI}/login`, {
+    fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,7 +145,7 @@ class App extends Component {
   };
 
   createDeck = (deckName = "Deck One") => {
-    fetch(`${process.env.REACT_APP_API_URI}/decks`, {
+    fetch(`/decks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -169,7 +169,7 @@ class App extends Component {
   };
 
   createCard = (cardFront, cardBack, deckId) => {
-    fetch(`${process.env.REACT_APP_API_URI}/cards`, {
+    fetch(`/cards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -196,7 +196,7 @@ class App extends Component {
   };
 
   deleteDeck = (deckId) => {
-    fetch(`${process.env.REACT_APP_API_URI}/decks/${deckId}`, {
+    fetch(`/decks/${deckId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -218,7 +218,7 @@ class App extends Component {
   };
 
   editCard = (cardFront, cardBack, deckId, cardId) => {
-    fetch(`${process.env.REACT_APP_API_URI}/cards/${cardId}`, {
+    fetch(`/cards/${cardId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -260,7 +260,7 @@ class App extends Component {
   };
 
   deleteCard = (cardId, deckId) => {
-    fetch(`${process.env.REACT_APP_API_URI}/cards/${cardId}`, {
+    fetch(`/cards/${cardId}`, {
       method: "DELETE",
       Authorization: localStorage.getItem("token"),
     });
