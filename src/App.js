@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     decks: [],
     selectedCards: [],
+    selectedDecks: [],
     currentUser: null,
     users: [],
   };

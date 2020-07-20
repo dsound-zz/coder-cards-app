@@ -30,7 +30,7 @@ body {
 
 .flex-container {
   display: inline-flex;
-  border: purple solid 2px;
+  /* border: purple solid 2px; */
   width: 50%;
   height: auto;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Card, Icon, Modal, Form, Confirm, Grid } from 'semantic-ui-react';
-import FlipCard from 'react-flipcard-2'
 
 // render cards here 
 
@@ -65,10 +64,11 @@ class DeckLayout extends Component {
     this.props.editCard(this.state.cardFront, this.state.cardBack, this.state.deckId, this.props.card.id)
   };
 
-  handleDeleteCard = () => {
-  };
+  // handleDeleteCard = () => {
+  // };
 
   render() {
+    debugger 
     const { isFlipped } = this.state;
     return (
       <>
@@ -139,7 +139,7 @@ class DeckLayout extends Component {
               <Form.Select
                 fluid
                 onChange={this.handleChange}
-                placeholder="select deck"
+                placeholder={this.props.selectedDecks.map((deck) => deck.name )}
                 label="deck"
                 name="deckId"
                 size={4}
