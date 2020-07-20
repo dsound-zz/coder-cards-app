@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, Modal, Form, Confirm, Grid } from 'semantic-ui-react';
+import { Icon, Modal, Form, Confirm, } from 'semantic-ui-react';
 
 // render cards here 
 
@@ -47,7 +47,6 @@ class DeckLayout extends Component {
 
   handleClick = () => { 
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }))
-    console.log(this.state.isFlipped)
   }
 
 
@@ -67,8 +66,7 @@ class DeckLayout extends Component {
   // handleDeleteCard = () => {
   // };
 
-  render() {
-    debugger 
+  render() { 
     const { isFlipped } = this.state;
     return (
       <>
@@ -94,7 +92,7 @@ class DeckLayout extends Component {
          
             <div className="scene scene--card">
               <div
-                className="card"
+           
                 onClick={() => this.handleClick()}
                 className={isFlipped ? "card is-flipped" : "card"}
               >
