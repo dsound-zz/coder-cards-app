@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:9000/api/v1",
-   "engines": {
-    "node": "12.18.4" 
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,6 +10,7 @@
     "react": "^16.13.1",
     "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.1",
+
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
@@ -21,13 +19,10 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "start": "react-scripts start",
+    "build": "react-scripts .env build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-     "build": "cd client && yarn install && yarn build && cd ..",
-    "deploy": "cp -a client/build/. public/",
-    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+    "eject": "react-scripts eject"
   },
-  
   "eslintConfig": {
     "extends": "react-app"
   },
